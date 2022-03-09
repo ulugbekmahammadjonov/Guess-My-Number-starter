@@ -7,6 +7,7 @@ const input = document.querySelector('.guess');
 const body = document.getElementsByTagName("body")
 const score = document.querySelector('.score');
 const highscore = document.querySelector('.highscore');
+const number = document.querySelector('.number');
 
 let guessNumber;
 
@@ -28,6 +29,7 @@ check.addEventListener("click", ()=>{
     }else if(input.value == guessNumber){
         message.textContent ="Currect Number"
         document.body.style.backgroundColor="green"
+        number.textContent =guessNumber
     }
 })
 
@@ -47,6 +49,7 @@ function Update(){
     input.value=""
     document.body.style.backgroundColor = '#222 ';
     score.textContent=20
+    number.textContent="?"
     setNumber()
 }
 
