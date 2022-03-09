@@ -11,11 +11,10 @@ const number = document.querySelector('.number');
 
 let guessNumber;
 
-
- function setNumber(){
+function setNumber(){
      guessNumber = Math.floor(Math.random()*21);
- }
- setNumber()
+}
+setNumber()
 
 check.addEventListener("click", ()=>{
     Score()
@@ -34,13 +33,7 @@ check.addEventListener("click", ()=>{
 })
 
 again.addEventListener("click", ()=>{
-    if (highscore.textContent == 0) {
-      highscore.textContent = score.textContent;
-    }else if (highscore.textContent < score.textContent) {
-      highscore.textContent = score.textContent;
-    } 
-    
-   
+    Highscore()
     Update();
 })
 
@@ -54,14 +47,16 @@ function Update(){
 }
 
 function Score(){
-    // highscore.textContent = score.textContent
     if(guessNumber != input.value){
         score.textContent--
     }
 }
+
 function Highscore(){
+    if (highscore.textContent == 0) {
+      highscore.textContent = score.textContent;
+    } else if (highscore.textContent < score.textContent) {
+      highscore.textContent = score.textContent;
+    } 
     
-    if(input.value!=guessNumber){
-            highscore.textContent--
-    }
 }
